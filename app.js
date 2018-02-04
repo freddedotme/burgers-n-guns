@@ -69,6 +69,7 @@ function Data() {
 
 Data.prototype.addOrder = function (order) {
   this.orders.push(order);
+  broadcast('+ order [' + order.name + ', ' + order.cart.price + ' SEK]');
 };
 
 Data.prototype.getOrders = function () {
@@ -83,7 +84,7 @@ Data.prototype.addClient = function (socket) {
   if (this.clients.indexOf(socket) !== -1) return;
   this.clients.push(socket);
 
-  broadcast('clients: [' + this.clients.length + ']');
+  broadcast('+ clients: [' + this.clients.length + ']');
 };
 
 Data.prototype.removeClient = function (socket) {
@@ -92,7 +93,7 @@ Data.prototype.removeClient = function (socket) {
 
   this.clients.splice(pos, 1);
 
-  broadcast('clients: [' + this.clients.length + ']');
+  broadcast('- clients: [' + this.clients.length + ']');
 };
 
 var data = new Data();
@@ -102,14 +103,15 @@ var data = new Data();
 io.on('connection', function (socket) {
   data.addClient(socket);
   socket.emit('getBurgers', {burgers: data.getBurgers()});
+  socket.emit('getOrders', {orders: data.getOrders()});
 
   socket.on('disconnect', function () {
     data.removeClient(socket);
   });
 
-  socket.on('addOrder', function (data) {
-    var order = {socket: socket, order: order};
-    data.addOrder(order);
+  socket.on('addOrder', function (e) {
+    e.order.uid = data.getOrders().length;
+    data.addOrder(e.order);
+    io.emit('newOrder', {order: e.order});
   });
-
 });

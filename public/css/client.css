@@ -25,6 +25,10 @@ p {
   font-size: 16px;
 }
 
+a {
+  color: inherit;
+}
+
 section {
   width: 100%;
   overflow: hidden;
@@ -37,8 +41,22 @@ section {
   padding: 20px;
 }
 
+.header_b a {
+  opacity: 0.85;
+  padding: 5px;
+  background: #000;
+  margin-top: 10px;
+  display: inline-block;
+}
+
 .burgers_b {
   background: #000;
+  padding: 20px;
+}
+
+.orders_b {
+  width: 100%;
+  max-width: 600px;
   padding: 20px;
 }
 
@@ -50,6 +68,12 @@ section {
   background-size: cover;
   background-position: center;
   color: #fff;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .burger_b:hover {
@@ -115,10 +139,31 @@ section {
   padding: 10px;
 }
 
-.order_b {
+.input_b {
   width: 50%;
   padding: 20px 10px 20px 20px;
   float: left;
+}
+
+.alert {
+  padding: 10px;
+  background: red;
+  color: #fff;
+  opacity: 1;
+}
+
+.order_b {
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 5px 10px;
+  margin-bottom: 10px;
+}
+
+.order_b ul {
+  list-style: none;
+  line-height: 1.4;
 }
 
 .cart_b {
@@ -127,14 +172,14 @@ section {
   float: left;
 }
 
-form {
+.form {
   width: 100%;
   padding: 20px;
   background: #fff;
   box-shadow: rgba(0, 0, 0, 0.5) 0 5px 10px;
 }
 
-form input, button {
+.form input, button {
   width: 100%;
   padding: 10px;
   font-size: 16px;
@@ -142,16 +187,21 @@ form input, button {
   border-bottom: #f9f9f9;
 }
 
-form select {
+.form select {
   margin-right: 10px;
 }
 
-form input:first-child {
+.form input:first-child {
   margin-top: 0;
 }
 
-form > * {
+.form > * {
   margin-top: 20px;
+}
+
+.form #map-order {
+  height: 300px;
+  border: 5px solid #2123a5;
 }
 
 .item_b {
@@ -164,8 +214,17 @@ form > * {
   cursor: pointer;
 }
 
+.item_b .remove {
+  text-decoration: underline;
+  opacity: 0.75;
+}
+
 .item_b span:last-child {
   float: right;
+}
+
+#map-dispatcher {
+  height: 450px;
 }
 
 .trump {
@@ -236,7 +295,7 @@ form > * {
     display: none;
   }
 
-  .order_b, .cart_b {
+  .cart_b, .input_b{
     width: 100%;
     padding: 20px;
   }
