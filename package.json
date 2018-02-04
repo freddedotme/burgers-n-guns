@@ -1,0 +1,15 @@
+{
+  "name": "burger-n-guns",
+  "version": "0.0.1",
+  "description": "The only place for getting yo burga'. Yihaaa!",
+  "main": "app.js",
+  "author": "Fredrik Andersson",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2",
+    "socket.io": "^2.0.4",
+    "vue": "^2.5.2",
+    "vue-router": "^3.0.1",
+    "leaflet": "^1.3.1"
+  }
+}

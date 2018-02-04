@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Burgers & Guns</title>
+  <meta name="description" content="We mix burgers with guns! Yihaaa!">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="css/client.css">
+  <link rel="stylesheet" href="leaflet/leaflet.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Bungee|Lekton" rel="stylesheet">
+  <script src="/socket.io/socket.io.js" defer></script>
+  <script src="vue/vue.js" defer></script>
+  <script src="vue-router/vue-router.js" defer></script>
+  <script src="leaflet/leaflet.js" def></script>
+  <script src="js/components.js" defer></script>
+  <script src="js/client.js" defer></script>
+</head>
+<body>
+<div id="app">
+  <div class="trump">
+    <img src="img/trump.jpg" alt=""/>
+    <div>
+      <p>{{ trump }}</p>
+    </div>
+  </div>
+  <section class="header_b">
+    <h1>Burgers & Guns</h1>
+    <p>We mix burgers with guns! Yihaaa!</p>
+  </section>
+  <router-view name="main"></router-view>
+</div>
+</body>
+</html>
