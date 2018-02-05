@@ -204,6 +204,22 @@ section {
   border: 5px solid #2123a5;
 }
 
+.form button {
+  background: #2123a5;
+  background: -moz-linear-gradient(left, #2123a5 0%, #af0e0e 100%);
+  background: -webkit-linear-gradient(left, #2123a5 0%, #af0e0e 100%);
+  background: linear-gradient(to right, #2123a5 0%, #af0e0e 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2123a5', endColorstr='#af0e0e', GradientType=1);
+  color: #fff;
+  border-radius: 50px;
+  padding: 20px 0 20px;
+}
+
+.form button:disabled {
+  color: #000;
+  background: grey;
+}
+
 .item_b {
   color: #fff;
   padding: 20px;
@@ -295,7 +311,7 @@ section {
     display: none;
   }
 
-  .cart_b, .input_b{
+  .cart_b, .input_b {
     width: 100%;
     padding: 20px;
   }

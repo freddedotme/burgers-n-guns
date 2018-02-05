@@ -176,6 +176,7 @@ const app = new Vue({
       order.location.lng = 0.0;
       if (this.marker) this.map[0].removeLayer(this.marker);
       order.cart = {price: 0, amount: 0, items: []};
+      order.submit = 'Send order';
       this.disabled = false;
     },
     initMap: function () {
